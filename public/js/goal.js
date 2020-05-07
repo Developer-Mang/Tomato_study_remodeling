@@ -268,13 +268,22 @@ const deleteGoalFn = async id => {
     console.error(e);
   }
   
-  const deleteTodos = todos.filter(todo => todo.goal === id);
-  console.log('목표에 관련된 할일 삭제 이벤트', deleteTodos);
-  // try {
-  //   await fetch('/todos/12,13', { method: 'delete' });
-  // } catch (e) {
-  //   console.error(e);
-  // }
+  const deleteTodos = todos.filter(({ goal }) => goal === id);
+  const deleteTodosId = deleteTodos.map(target => target.id);
+  // const urlFn = array => {
+  //   let text = '';
+  //   array.forEach((ele, index) => {
+  //     text += index ? `,id=${ele}` : `id=${ele}`;
+  //   });
+  //   console.log(text);
+  //   return text;
+  // } 
+  console.log('목표에 관련된 할일 삭제 이벤트', deleteTodosId);
+  try {
+    
+  } catch (e) {
+    console.error(e);
+  }
   goalRender();
   closePopup($deleteGoal);
 };

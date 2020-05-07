@@ -120,7 +120,7 @@ const getTodayPersent = () => {
 
   const [goalHour, goalMin] = getTodayGoalTIme();
   const [nowHour, nowMin] = getTodayDone();
-  let percent = Math.round(((nowHour * 60 + +nowMin) / (goalHour * 60 + +goalMin)) * 100);
+  let percent = Math.round(((nowHour * 60 + +nowMin) / (goalHour * 60 + +goalMin)) * 100) || 0;
   percent = percent > 9 ? percent : '0' + percent;
   $todayPercent.textContent = `${percent}%`;
 };

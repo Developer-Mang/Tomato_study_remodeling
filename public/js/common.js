@@ -20,7 +20,6 @@ const closePopup = target => {
 const openAlert = text => {
   $alert.classList.add('active');
   $alert.style.paddingTop = `${64 - (13 * (parseInt(text.length / 14, 10)) + 2 * (parseInt(text.length / 14, 10) + 1))}px`;
-  console.log(text.length);
   $alert.querySelector('p').textContent = text;
 };
 // popup 이벤트 함수
